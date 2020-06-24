@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id="anahtar" />
+    <input type="text" id="deger">
+
+    <button onclick="LocalWrite()">Local Storage Yaz</button>
+    <button onclick="SessionWrite()">Session Storage Yaz</button>
+    <button onclick="LocalRead()">Local Storage OKU</button>
+    <button onclick="SessionRead()">Session Storage OKU</button>
+
+    <script>
+        function LocalWrite() {
+            localStorage.setItem($('#anahtar').val(), $('#deger').val());
+        }
+        function LocalRead() {
+            var value = localStorage.getItem($('#anahtar').val());
+            alert(value); 
+        }
+
+        function SessionWrite() {
+            sessionStorage.setItem($('#anahtar').val(), $('#deger').val());
+        }
+        function SessionRead() {
+            var value = sessionStorage.getItem($('#anahtar').val());
+            alert(value); 
+        }
+    </script>
+</body>
+
+</html>

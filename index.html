@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+
+    <h1 id="baslik">Merhaba</h1>
+    <h1>İkinci başlık</h1>
+    <button onclick="gizle()">gizle</button>
+    <a href="" target="_blank">Link</a>
+    <a href="">başka bir link</a>
+    <input id="namebox" type="text">
+    <input type="text">
+    <button onclick="Fokuslan()">Fokuslan</button>
+    <button onclick="Sakla()">Sakla</button>
+    <script>
+        function gizle()
+        {
+            $('#baslik').hide(); 
+        }
+        $(document).ready(function () {
+            $("h1:first").css('color','blue');
+        })
+        $(document).ready(function () {
+            $("a[target='_blank']").css('color','blue');
+        })
+        $('#baslik').click(function(){
+            alert('Başlığa tıklandı');
+        });
+        function Fokuslan(){
+            $("#namebox").focus(function(){
+                console.log(this);
+                $(this).css("background-color",'#000');
+            })
+        }
+        function Sakla()
+        {
+            //toggle(1000),FadeIn(1000),FadeOut(1000),SlideDown(1000),SlideUp(1000)
+            $('#baslik').hide(1000,function (){
+                alert('Sakladım!');
+            });
+        }
+     /*  jQuery(document).ready(Kirmizi);
+
+        function Kirmizi() {
+            jQuery('h1').each(function() {
+                this.style.color = 'red';
+            });
+        }
+        
+
+        $(document).ready(function () {
+           $('h1').each(function () {
+               this.style.color="red";
+           }); 
+        });
+        */
+    </script>
+
+
+
+</body>
+
+</html>
